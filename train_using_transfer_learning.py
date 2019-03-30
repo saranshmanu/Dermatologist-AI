@@ -11,8 +11,8 @@ pre_model = applications.InceptionV3(weights = "imagenet", include_top=False)
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 train_datagen = ImageDataGenerator(rescale = 1./255,shear_range = 0.2,zoom_range = 0.2,horizontal_flip = True)
 test_datagen = ImageDataGenerator(rescale = 1./255)
-path = "dataset/test"
-path_test = "dataset/valid"
+path = "dataset/train"
+path_test = "dataset/test"
 training_set = train_datagen.flow_from_directory(path,target_size = (299, 299),batch_size = 8, class_mode = 'categorical')
 test_set = test_datagen.flow_from_directory(path_test,target_size = (299, 299),batch_size = 8, class_mode = 'categorical')
 
