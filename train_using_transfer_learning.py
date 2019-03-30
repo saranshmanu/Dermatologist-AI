@@ -13,8 +13,8 @@ train_datagen = ImageDataGenerator(rescale = 1./255,shear_range = 0.2,zoom_range
 test_datagen = ImageDataGenerator(rescale = 1./255)
 path = "dataset/train"
 path_test = "dataset/test"
-training_set = train_datagen.flow_from_directory(path,target_size = (299, 299),batch_size = 8, class_mode = 'categorical')
-test_set = test_datagen.flow_from_directory(path_test,target_size = (299, 299),batch_size = 8, class_mode = 'categorical')
+training_set = train_datagen.flow_from_directory(path,target_size = (299, 299),batch_size = 32, class_mode = 'categorical')
+test_set = test_datagen.flow_from_directory(path_test,target_size = (299, 299),batch_size = 32, class_mode = 'categorical')
 
 for layer in pre_model.layers[:5]:
     layer.trainable = False
